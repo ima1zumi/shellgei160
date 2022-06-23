@@ -40,3 +40,12 @@ seq 4 | xargs -n2 mv $1 $2
 seq 4 | xargs -I@ echo dir_@
 ```
 
+## 1.3.g
+
+```bash
+# 1
+seq 4 | awk '$1%2==0{print "mkdir even_" $1}$1%2!=0{print "mkdir odd_" $1}' | bash
+
+# 模範解答
+seq 4 | awk '{print "mkdir " ($1%2 ? "even_" : "odd_") $1}'
+```
