@@ -49,3 +49,8 @@ seq 4 | awk '$1%2==0{print "mkdir even_" $1}$1%2!=0{print "mkdir odd_" $1}' | ba
 # 模範解答
 seq 4 | awk '{print "mkdir " ($1%2 ? "even_" : "odd_") $1}'
 ```
+
+## 1.4.a
+```bash
+find . | grep files
+```
