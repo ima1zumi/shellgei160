@@ -54,3 +54,11 @@ seq 4 | awk '{print "mkdir " ($1%2 ? "even_" : "odd_") $1}'
 ```bash
 find . | grep files
 ```
+
+## 問題1
+```bash
+cat files.txt | grep -e '\.exe$'
+
+# 模範解答
+grep '\.exe$' files.txt
+```
