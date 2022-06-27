@@ -62,3 +62,12 @@ cat files.txt | grep -e '\.exe$'
 # 模範解答
 grep '\.exe$' files.txt
 ```
+
+## 問題2
+```bash
+ls *.png | awk '{{str=$1}gsub("png", "jpg", $1); print str, "./converted/"$1}' | xargs -n 2 convert
+
+# 模範解答
+# sedでPNGファイルから拡張子を取り除き、xargsに引き渡す
+ls *.png | sed 's/\.png$//' | xargs -I@ convert @.png @.jpg
+```
