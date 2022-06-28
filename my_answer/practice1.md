@@ -71,3 +71,8 @@ ls *.png | awk '{{str=$1}gsub("png", "jpg", $1); print str, "./converted/"$1}' |
 # sedでPNGファイルから拡張子を取り除き、xargsに引き渡す
 ls *.png | sed 's/\.png$//' | xargs -I@ convert @.png @.jpg
 ```
+
+## 問題3
+```bash
+ls -1 | awk '{printf "%d %07d ", $1, $1}' | xargs -n2 mv
+```
