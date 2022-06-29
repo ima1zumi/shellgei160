@@ -76,3 +76,8 @@ ls *.png | sed 's/\.png$//' | xargs -I@ convert @.png @.jpg
 ```bash
 ls -1 | awk '{printf "%d %07d ", $1, $1}' | xargs -n2 mv
 ```
+
+## 問題4
+```bash
+rg -l ^10$ | xargs rm
+```
