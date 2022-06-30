@@ -81,3 +81,8 @@ ls -1 | awk '{printf "%d %07d ", $1, $1}' | xargs -n2 mv
 ```bash
 rg -l ^10$ | xargs rm
 ```
+
+## 問題5
+```bash
+cat qdata/5/ntp.conf | awk '$1=="pool"{print $2}'
+```
