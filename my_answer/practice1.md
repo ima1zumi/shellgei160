@@ -86,3 +86,8 @@ rg -l ^10$ | xargs rm
 ```bash
 cat qdata/5/ntp.conf | awk '$1=="pool"{print $2}'
 ```
+
+## 問題6
+```bash
+echo | awk '{for (i = 4; i >= 0; i--) {str=substr("    ", 0, i); print str "x" }}'
+```
