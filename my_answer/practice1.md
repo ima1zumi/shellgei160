@@ -91,3 +91,11 @@ cat qdata/5/ntp.conf | awk '$1=="pool"{print $2}'
 ```bash
 echo | awk '{for (i = 4; i >= 0; i--) {str=substr("    ", 0, i); print str "x" }}'
 ```
+
+## 問題7
+```bash
+cat qdata/7/kakeibo.txt | awk '{if($1>20190931){if($2~/\*/){sum+=int($3*1.08)}else{sum+=int($3*1.1)}}else{sum+=int($3*1.08)}}END{print sum}'
+```
+
+正規表現で1.08の条件まとめてしまって三項演算子を使えばもう少しすっきりかけたなー。
+`numsum` コマンド使うと `END{print sum}` が不要にできそうだった。
