@@ -99,3 +99,19 @@ cat qdata/7/kakeibo.txt | awk '{if($1>20190931){if($2~/\*/){sum+=int($3*1.08)}el
 
 正規表現で1.08の条件まとめてしまって三項演算子を使えばもう少しすっきりかけたなー。
 `numsum` コマンド使うと `END{print sum}` が不要にできそうだった。
+
+## 問題8
+```bash
+cat qdata/8/access.log | sed s/:/\\//g | sed s/\\///g | sed s/\\[.*Nov//g | awk '{$4<2017120000 ? am+=1 : pm+=1}END{print "am", am, "pm", pm}'
+
+```
+
+何もわからなくてsedで無理やり取り不要な箇所をとり除いた。
+後ろから切り出すとよくて、
+
+```bash
+cat qdata/8/access.log | awk -F: '{print $(NF-2)}'
+```
+
+`-F:` で区切り文字をコロンにして後ろから2番目(列数-2)を取り出すとスッキリした
+
