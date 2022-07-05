@@ -115,3 +115,8 @@ cat qdata/8/access.log | awk -F: '{print $(NF-2)}'
 
 `-F:` で区切り文字をコロンにして後ろから2番目(列数-2)を取り出すとスッキリした
 
+## 問題9
+
+```bash
+cat qdata/9/log_range.log | rg '(24/Dec/2016 (2[1-3]))|(25/Dec/2016) 0[0-3]'
+```
