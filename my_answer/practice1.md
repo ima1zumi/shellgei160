@@ -120,3 +120,11 @@ cat qdata/8/access.log | awk -F: '{print $(NF-2)}'
 ```bash
 cat qdata/9/log_range.log | rg '(24/Dec/2016 (2[1-3]))|(25/Dec/2016) 0[0-3]'
 ```
+
+## 問題10
+
+```bash
+cat qdata/10/headings.md | gsed '/# /a ===' | gsed '/## /a ---' | gsed -e 's/#* //g'
+```
+
+sed楽しい〜
