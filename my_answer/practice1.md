@@ -128,3 +128,15 @@ cat qdata/10/headings.md | gsed '/# /a ===' | gsed '/## /a ---' | gsed -e 's/#* 
 ```
 
 sed楽しい〜
+
+## 問題11
+
+```bash
+cat qdata/11/gijiroku.txt | sed 's/すず/鈴木:/g' | sed 's/さと/佐藤:/g' | sed 's/やま$/山田:/g' | xargs -L2 | sed 's/ //g' | gsed -z "s/\\n/\n\n/g"
+```
+
+改行を置換するために `-z` オプションを使った。gsed で使えるぽい
+sedは行単位で処理するので行の末尾を意味する `$` を使ってもよかった。`s/$/\n/` こんなかんじ。
+
+
+
