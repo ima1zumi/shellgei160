@@ -29,3 +29,11 @@ bash-3.2$ c=${a/優/骨麺}; echo $c;
 シェルの変数展開は柔軟
 https://qiita.com/t_nakayama0714/items/80b4c94de43643f4be51
 
+## 2.1.d
+
+```bash
+echo $((a+b)) $((b-a)) $((a*b)) $((a/b)) $((b**a*b))
+```
+
+最後は `$b<<$a` でも良かった
+シフト演算か〜ぱっと出てこない
