@@ -37,3 +37,35 @@ echo $((a+b)) $((b-a)) $((a*b)) $((a/b)) $((b**a*b))
 
 最後は `$b<<$a` でも良かった
 シフト演算か〜ぱっと出てこない
+
+## 2.1.f
+
+こうなってしまいよくわからなくなってskip
+
+```bash
+bash-3.2$ declare -a b
+bash-3.2$ b["SHELL"]="$SHELL"
+bash: /usr/local/bin/zsh: syntax error: operand expected (error token is "/usr/local/bin/zsh")
+```
+
+## 2.1.g
+
+```bash
+bash-3.2$ for x in "$1" "$2" "$3"; do echo $x; done
+aa
+bb
+cc
+bash-3.2$ seq 3 | while read x ; do echo -n "${x} " ; done
+1 2 3 bash-3.2$ a=0
+```
+
+xargs に渡そうとしたけどうまくできずechoの改行なしオプションを使った
+
+## 2.1.h
+
+```bash
+if test $((${a}%2)) -eq 0; then echo 偶数; elif test $((${a}%2)) -ne 0 ; then echo 奇数; else echo その他; fi
+```
+
+数が少ないから計算しなくても良かった。
+testコマンドは `[]` というショートカットがある。bash scriptでたまにみるやつだ
