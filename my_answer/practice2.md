@@ -69,3 +69,14 @@ if test $((${a}%2)) -eq 0; then echo 偶数; elif test $((${a}%2)) -ne 0 ; then 
 
 数が少ないから計算しなくても良かった。
 testコマンドは `[]` というショートカットがある。bash scriptでたまにみるやつだ
+
+## question 12
+
+```bash
+if [ $# == 1 ]; then
+  echo $(($1 * 2))
+else
+  read line
+  echo $((line * 2))
+fi
+```
