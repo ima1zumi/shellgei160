@@ -80,3 +80,15 @@ else
   echo $((line * 2))
 fi
 ```
+
+## question 13
+
+```bash
+if [ -f $1 ] ; then
+  cat $1
+else
+  touch $1 && cat $1
+fi
+```
+
+問題の意図がよくわからなかった
