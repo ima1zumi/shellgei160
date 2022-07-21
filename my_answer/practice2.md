@@ -92,3 +92,9 @@ fi
 ```
 
 問題の意図がよくわからなかった
+
+## 2.2.a
+
+```bash
+bash-3.2$ ps | awk '{if($4=="sleep"){print $1}}' | uniq -u | wc
+```
