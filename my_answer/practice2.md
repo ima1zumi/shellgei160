@@ -98,3 +98,7 @@ fi
 ```bash
 bash-3.2$ ps | awk '{if($4=="sleep"){print $1}}' | uniq -u | wc
 ```
+
+## 2.2.d
+
+A. サブシェルは別プロセスで動くから
