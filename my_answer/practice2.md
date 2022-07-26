@@ -117,3 +117,9 @@ bash-3.2$ cat <(echo ${a}) <(echo を逆さにすると) <(echo ${a}|rev)
 ```
 
 コマンド置換、プロセス置換はよくわかってない
+
+## 問題16
+
+```bash
+n="XYZ";(for i in {A..C};do n+=$i;echo $n;done);echo $n
+```
