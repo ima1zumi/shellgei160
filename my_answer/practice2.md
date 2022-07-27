@@ -123,3 +123,9 @@ bash-3.2$ cat <(echo ${a}) <(echo を逆さにすると) <(echo ${a}|rev)
 ```bash
 n="XYZ";(for i in {A..C};do n+=$i;echo $n;done);echo $n
 ```
+
+## 問題17
+
+```bash
+bash-3.2$ while read line; do echo $line; done < /etc/passwd >> ~/a
+```
