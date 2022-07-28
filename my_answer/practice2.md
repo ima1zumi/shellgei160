@@ -129,3 +129,14 @@ n="XYZ";(for i in {A..C};do n+=$i;echo $n;done);echo $n
 ```bash
 bash-3.2$ while read line; do echo $line; done < /etc/passwd >> ~/a
 ```
+
+## 問題18
+```bash
+bash-3.2$ IFS=:; while read -a line; do echo ${line[6]}; done  < /etc/passwd;
+```
+
+ここまで書いて、ワンライナーでfor文の書き方わからなくて答えを見たけどワンライナーでなくてもよかった
+`.` を追加してカウントアップの代わりにするのはなるほど…
+unset で連想配列を消す
+declare で連想配列を宣言
+連想配列使えるの忘れてた
