@@ -140,3 +140,38 @@ bash-3.2$ IFS=:; while read -a line; do echo ${line[6]}; done  < /etc/passwd;
 unset で連想配列を消す
 declare で連想配列を宣言
 連想配列使えるの忘れてた
+
+## 問題19
+
+```bash
+bash-3.2$ printf xxxx-xxxx 1<> qdata/19/cardno
+```
+
+わからなかったので模範解答を見た。問題を勘違いしてた
+printf はビルトインコマンドなのか
+<> で入力した部分だけ上書きができる
+
+## 2.3.a
+```bash
+bash-3.2$ echo {1..5}{.txt,.bash}
+1.txt 1.bash 2.txt 2.bash 3.txt 3.bash 4.txt 4.bash 5.txt 5.bash
+bash-3.2$ echo {2,4,6,8,10}{.txt,.bash}
+2.txt 2.bash 4.txt 4.bash 6.txt 6.bash 8.txt 8.bash 10.txt 10.bash
+bash-3.2$ echo {山,上}{田,}
+山田 山 上田 上
+```
+
+{2..10..2} で2から10までの数字を2個ごと出力
+
+## 2.3.b
+
+```bash
+bash-3.2$ ls ?.txt
+1.txt   2.txt   3.txt   4.txt   6.txt   7.txt   8.txt   9.txt
+bash-3.2$ ls [1,2,6]5.*
+15.bash 15.txt  25.txt  65.bash 65.txt
+bash-3.2$ ls [^2^9].*
+1.bash  1.txt   3.bash  3.txt   4.bash  4.txt   5.bash  6.bash  6.txt   7.bash  7.txt   8.bash  8.txt
+```
+
+`[!29]` とか `[^29]` でもよい
