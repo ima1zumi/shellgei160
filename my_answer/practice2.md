@@ -175,3 +175,11 @@ bash-3.2$ ls [^2^9].*
 ```
 
 `[!29]` とか `[^29]` でもよい
+
+## 問題20
+
+```bash
+bash-3.2$ files="/usr/*";for filepath in $files; do if [ -d $filepath ]; then echo ${filepath:5}; fi; done
+```
+
+サブシェルを使うという手もあった
