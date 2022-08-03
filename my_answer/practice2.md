@@ -183,3 +183,11 @@ bash-3.2$ files="/usr/*";for filepath in $files; do if [ -d $filepath ]; then ec
 ```
 
 サブシェルを使うという手もあった
+
+## 問題22
+
+```bash
+bash-3.2$ cat /dev/urandom | base64 | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 100 | xargs -n2 -I@ echo @.@.{co.jp,com}
+```
+
+こういう問題じゃなかったけどブレース展開はつかってるからいいか
