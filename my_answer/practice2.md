@@ -195,3 +195,13 @@ bash-3.2$ cat /dev/urandom | base64 | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 
 ## 2.4.b
 
 `kill -l` でシグナルの一覧を見られる
+
+## 問題23
+
+`kill -s 17 $$`
+
+- macOSだとSIGSTOPの番号が違ってた
+    - bash で `kill -l` すると確認できる
+- zshとbashで `kill -l` の出力が違う
+- `man signal` でシグナルの詳細を見られる
+
