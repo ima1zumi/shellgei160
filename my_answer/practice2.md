@@ -205,3 +205,15 @@ bash-3.2$ cat /dev/urandom | base64 | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 
 - zshとbashで `kill -l` の出力が違う
 - `man signal` でシグナルの詳細を見られる
 
+## 問題24
+
+```bash
+trap 'echo "trap EXIT"' EXIT
+```
+
+rm は実行したくなかったので echo を実行できることで代替した
+
+`EXIT` を trap することで SIGINT, SIGTERM などを捕まえられる
+SIGKILL は補足できない
+
+https://genzouw.com/entry/2021/03/02/080000/2381/
