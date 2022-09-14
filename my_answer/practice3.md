@@ -23,4 +23,10 @@ bash-3.2$ while read -a line; do if [ $line = `echo $line|rev` ]; then echo ${li
 
 `rev kaibun.txt ¦ grep -xf - kaibun.txt` で良かった。 -x は行全体がマッチしたらマッチしたことにする
 
+## 問題35
 
+```bash
+bash-3.2$ cat qdata/35/speech.txt | ruby -ne 'n=($_=~/\p{katakana}{5}/);n=n+4;puts("#{n} #{$_.slice(0,n)}")'
+```
+
+Rubyたのしい〜
