@@ -37,4 +37,7 @@ Rubyたのしい〜
 
 ## 3.2.a
 
-cat ./qdata/practice/konden | gsed -zE 's/私*財*法/おれのもの/g'
+cat ./qdata/practice/konden | gsed -zE 's/私\s*財\s*法/おれのもの/g'
+
+- \n?で良かった
+- grepは-Pオプション使えなかった
